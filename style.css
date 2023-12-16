@@ -43,25 +43,58 @@ table {
 }
 
 /* ------------------------ */
-#main, #form-wrap, #libraryDiv {
-    height: 100vh;
-}
+
 
 #main {
-    display: flex;
+    height: 100vh;
+    display: grid;
     border: 3px solid orange;
-    width: 100vw;
+    grid-template-areas: 
+        'hd lb lb lb'
+        'hd lb lb lb'
+        'fr lb lb lb'
+        'fr lb lb lb'
+        'fr lb lb lb';
+}
+
+#header, #form-wrap, #libraryDiv {
+    padding: 1rem;
+}
+
+#header {
+    grid-area: hd;
+    font-size: 3rem;
+}
+
+#header, #form-title {
+    text-align: center;
 }
 
 #form-wrap {
     border: 3px solid blue;
     width: 30vw;
-    height: 100vh;
+    height: auto;
+    grid-area: fr;
+}
+
+#form-title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+input {
+    margin: 0.2rem 0 1rem 0;
+}
+
+#submit-btn {
+    display: block;
+    
 }
 
 #libraryDiv {
     border: 3px solid red;
     width: 70vw;
+    grid-area: lb;
 }
 
 #libraryDiv > div {
@@ -69,5 +102,5 @@ table {
     font-size: 12px;
     border:2px solid black;
     width: 200px; 
-    height:auto;
+    height: auto;
 }
