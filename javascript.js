@@ -18,7 +18,8 @@ function Book(title, author, pages, language, status) {
     this.language = language;
     this.status = status;
     this.info = function() {
-        return title + ' by ' + author + ', ' + pages + ' pages, ' + 'written in ' + language + ' language, ' + status;
+        return 'Title: ' + title + 
+        '\nBy: ' + author + '\nNumber of pages: ' + pages + '\nLanguage: ' + language;
     }
 };
 
@@ -47,6 +48,7 @@ function loopAndDisplay() {
 
     } else {
         newContent = document.createTextNode(myLibrary[myLibrary.length-1].info());
+
     }
     newDiv.appendChild(newContent);
     libraryDiv.appendChild(newDiv);
