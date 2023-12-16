@@ -43,12 +43,20 @@ table {
 }
 
 /* ------------------------ */
-
+body {
+    background-image: url(/images/efe-kurnaz-RnCPiXixooY-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgb(224, 141, 155);
+}
 
 #main {
+    margin: 1rem;
     height: 100vh;
+    width: 100vw;
     display: grid;
-    border: 3px solid orange;
     grid-template-areas: 
         'hd lb lb lb'
         'hd lb lb lb'
@@ -63,6 +71,7 @@ table {
 
 #header {
     grid-area: hd;
+    background-color: rgba(164, 231, 226, 0.144);
     font-size: 3rem;
 }
 
@@ -71,10 +80,10 @@ table {
 }
 
 #form-wrap {
-    border: 3px solid blue;
     width: 30vw;
     height: auto;
     grid-area: fr;
+    background-color: rgba(164, 231, 226, 0.144);
 }
 
 #form-title {
@@ -92,16 +101,18 @@ input {
 }
 
 #libraryDiv {
-    border: 3px solid red;
     width: 70vw;
     grid-area: lb;
 }
 
 #libraryDiv > div {
-    background-color: pink;
-    font-size: 24px;
-    border:2px solid black;
+    font-size: 1.3rem;
     width: 300px; 
     height: auto;
     white-space: pre-wrap;
+    padding: 1rem;
+    margin: 1rem 0;
+    line-height: 1.2;
+    border-radius: 10px;
+    background-image: linear-gradient(rgba(100, 199, 199, 0.842), rgba(255, 255, 255, 0.685));
 }
