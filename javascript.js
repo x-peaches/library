@@ -36,10 +36,17 @@ function addBookToLibrary(event) {
     loopAndDisplay();
 }
 
-//Loop through books and display
+//Loop through books and display them
 function loopAndDisplay() {
+
+//variables
     let newDiv = document.createElement('div');
     let newContent ='';
+    let delBtn = document.createElement('div');
+    let x = document.createTextNode('X');
+
+ //loop through library  
+
     if (libraryDiv.children.length === 0) {
         for(let i = 0; i < myLibrary.length; i++) {
         newContent = document.createTextNode(myLibrary[i].info());
@@ -50,8 +57,22 @@ function loopAndDisplay() {
         newContent = document.createTextNode(myLibrary[myLibrary.length-1].info());
 
     }
+
+//append elements
+    delBtn.classList.add('del-btn');
+    delBtn.appendChild(x);
+    newDiv.appendChild(delBtn);
     newDiv.appendChild(newContent);
     libraryDiv.appendChild(newDiv);
+
+//delete function event listener
+    delBtn.addEventListener('click', deleteBook);    
+}
+
+//delete function
+
+function deleteBook(e) {
+    e.target.parentElement.remove();
 }
 
 

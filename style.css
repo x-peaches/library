@@ -106,6 +106,9 @@ input {
 }
 
 #libraryDiv > div {
+    /* display: grid;
+    grid-template: ; */
+    position: relative;
     font-size: 1.3rem;
     width: 300px; 
     height: auto;
@@ -115,4 +118,14 @@ input {
     line-height: 1.2;
     border-radius: 10px;
     background-image: linear-gradient(rgba(100, 199, 199, 0.842), rgba(255, 255, 255, 0.685));
+}
+
+.del-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
 }
