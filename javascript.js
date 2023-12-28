@@ -42,8 +42,12 @@ function loopAndDisplay() {
 //variables
     let newDiv = document.createElement('div');
     let newContent ='';
+    let readSwitch = document.createElement('div');
     let delBtn = document.createElement('div');
-    let x = document.createTextNode('X');
+
+//add html
+    readSwitch.innerHTML = '<label class="switch"><input type="checkbox"><span class="slider round"></span></label>'
+    delBtn.innerHTML = '<i class="fa-solid fa-x"></i>'; 
 
  //loop through library  
 
@@ -55,24 +59,33 @@ function loopAndDisplay() {
 
     } else {
         newContent = document.createTextNode(myLibrary[myLibrary.length-1].info());
-
     }
 
 //append elements
     delBtn.classList.add('del-btn');
-    delBtn.appendChild(x);
     newDiv.appendChild(delBtn);
     newDiv.appendChild(newContent);
+    newDiv.appendChild(readSwitch);
     libraryDiv.appendChild(newDiv);
 
-//delete function event listener
+
+//add event listeners
     delBtn.addEventListener('click', deleteBook);    
+    readSwitch.addEventListener('click', readFunc)
 }
 
 //delete function
 
 function deleteBook(e) {
-    e.target.parentElement.remove();
+    e.target.parentElement.parentElement.remove();
 }
 
+//read function
 
+function readFunc(e) {
+    if (e.target.checked == false) {
+        e.target.classList.add('not-read');
+    } else {
+        e.target.classList.remove('not-read');
+    }
+}// add class to the card itself, not to the button!
