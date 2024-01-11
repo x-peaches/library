@@ -117,7 +117,8 @@ input {
     margin: 1rem 0;
     line-height: 1.2;
     border-radius: 10px;
-    background-image: linear-gradient(rgba(100, 199, 199, 0.842), rgba(255, 255, 255, 0.685));
+    background: linear-gradient(rgba(100, 199, 199, 0.842), rgba(255, 255, 255, 0.685));
+    /* background-image: linear-gradient(rgba(100, 199, 199, 0.842), rgba(255, 255, 255, 0.685)); */
 }
 
 .del-btn {
@@ -193,6 +194,8 @@ input {
     border-radius: 50%;
   }
 
-  .not-read {
+  #libraryDiv > div.not-read {
     
+    background: rgba(253, 3, 128, 0.663);
+    background-image: linear-gradient(rgba(184, 37, 118, 0.242), rgba(255, 255, 255, 0.685));
   }

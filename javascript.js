@@ -1,6 +1,5 @@
 
 //define variables
-
 const myLibrary = [];
 const bookAuthor = document.getElementById('author');
 const bookTitle = document.getElementById('title');
@@ -9,8 +8,8 @@ const bookLang = document.getElementById('language');
 const bookStatus = document.getElementById('read-status');
 const submitBtn = document.getElementById('submit-btn');
 const libraryDiv = document.getElementById('libraryDiv');
-//constructor
 
+//constructor
 function Book(title, author, pages, language, status) {
     this.title = title;
     this.author = author;
@@ -27,7 +26,6 @@ function Book(title, author, pages, language, status) {
 submitBtn.addEventListener('click', addBookToLibrary);
 
 //Add user books to arr
-
 function addBookToLibrary(event) {
     event.preventDefault();
 
@@ -39,9 +37,9 @@ function addBookToLibrary(event) {
 //Loop through books and display them
 function loopAndDisplay() {
 
-//variables
+//variables for book cards
     let newDiv = document.createElement('div');
-    let newContent ='';
+    let newContent = '';
     let readSwitch = document.createElement('div');
     let delBtn = document.createElement('div');
 
@@ -62,6 +60,7 @@ function loopAndDisplay() {
     }
 
 //append elements
+    newDiv.classList.add('book-card');
     delBtn.classList.add('del-btn');
     newDiv.appendChild(delBtn);
     newDiv.appendChild(newContent);
@@ -69,7 +68,7 @@ function loopAndDisplay() {
     libraryDiv.appendChild(newDiv);
 
 
-//add event listeners
+//add event listeners for book card buttons
     delBtn.addEventListener('click', deleteBook);    
     readSwitch.addEventListener('click', readFunc)
 }
@@ -77,15 +76,15 @@ function loopAndDisplay() {
 //delete function
 
 function deleteBook(e) {
-    e.target.parentElement.parentElement.remove();
+    e.target.closest('.book-card').remove();
 }
 
 //read function
 
 function readFunc(e) {
-    if (e.target.checked == false) {
-        e.target.classList.add('not-read');
+    if (e.target.checked === false) {
+        e.target.closest('.book-card').classList.add('not-read');
     } else {
-        e.target.classList.remove('not-read');
+        e.target.closest('.book-card').classList.remove('not-read');
     }
 }// add class to the card itself, not to the button!
