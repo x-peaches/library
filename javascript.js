@@ -5,12 +5,11 @@ const bookAuthor = document.getElementById('author');
 const bookTitle = document.getElementById('title');
 const bookPages = document.getElementById('pages-num');
 const bookLang = document.getElementById('language');
-const bookStatus = document.getElementById('read-status');
 const submitBtn = document.getElementById('submit-btn');
 const libraryDiv = document.getElementById('libraryDiv');
 
 //constructor
-function Book(title, author, pages, language, status) {
+function Book(title, author, pages, language) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -28,8 +27,7 @@ submitBtn.addEventListener('click', addBookToLibrary);
 //Add user books to arr
 function addBookToLibrary(event) {
     event.preventDefault();
-
-    myLibrary.push(new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookLang.value, bookStatus.value));
+    myLibrary.push(new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookLang.value));
     console.log(myLibrary);
     loopAndDisplay();
 }
